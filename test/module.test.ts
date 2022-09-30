@@ -3,15 +3,7 @@ import { it, expect } from 'vitest'
 import { setup, useTestContext } from '@nuxt/test-utils'
 
 await setup({
-  rootDir: fileURLToPath(new URL('../playground', import.meta.url)),
-  build: true,
-  nuxtConfig: {
-    hooks: {
-      'modules:before'(ctx) {
-        ctx.nuxt.options.nitro.prerender = { routes: ['/'] }
-      }
-    }
-  }
+  rootDir: fileURLToPath(new URL('../playground', import.meta.url))
 })
 
 it('should finish on windows', () => {
